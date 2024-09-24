@@ -1,25 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { dataFake } from '../../data/dataFake';
 
 @Component({
   selector: 'app-content',
   standalone: true,
   imports: [RouterLink],
   templateUrl: './content.component.html',
-  styleUrl: './content.component.css'
+  styleUrl: './content.component.css',
 })
 export class ContentComponent implements OnInit {
-  photoCover: string = "https://wallpapercat.com/w/full/3/3/d/319908-1920x1080-desktop-1080p-iron-man-background.jpg";
-  contentTitle: string = "MINHA NOTICIA";
-  contentDescription: string = "Ola Mundo";
+  photoCover: string = '';
+  contentTitle: string = '';
+  contentDescription: string = '';
+  private id: string | null = '0';
 
-  constructor(private route: ActivatedRoute) {
-
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(value =>
-      console.log(value.get("id"))
-    );
+    this.route.paramMap.subscribe((value) => (this.id = value.get('id')));
+
+    this.setValuesToComponent(this.id);
+  }
+
+  setValuesToComponent(id: string | null) {
+    const result = dataFake.filter((article) => article.id === id)[0];
+    
+    this.contentTitle = result.title;
+    this.contentDescription = result.description;
+    this.photoCover = result.photoCover;
   }
 }
