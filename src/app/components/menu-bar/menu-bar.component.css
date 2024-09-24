@@ -7,3 +7,8 @@
     margin-right: 20px;
     list-style: none;
 }
+
+.container_menu-bar > ul > li > a {
+    margin-right: 5px;
+    list-style: none;
+}
