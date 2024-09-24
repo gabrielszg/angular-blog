@@ -9,7 +9,7 @@ import { faArrowLeft, IconDefinition } from '@fortawesome/free-solid-svg-icons';
   standalone: true,
   imports: [RouterLink, FontAwesomeModule],
   templateUrl: './content.component.html',
-  styleUrl: './content.component.css',
+  styleUrls: ['./content.component.css', './content.responsive.component.css'],
 })
 export class ContentComponent implements OnInit {
   photoCover: string = '';
@@ -29,7 +29,7 @@ export class ContentComponent implements OnInit {
 
   setValuesToComponent(id: string | null) {
     const result = dataFake.filter((article) => article.id === id)[0];
-    
+
     this.contentTitle = result.title;
     this.contentDescription = result.description;
     this.photoCover = result.photoCover;

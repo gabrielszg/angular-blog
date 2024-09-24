@@ -6,16 +6,18 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './small-card.component.html',
-  styleUrl: './small-card.component.css'
+  styleUrls: [
+    './small-card.component.css',
+    './small-card.responsive.component.css',
+  ],
 })
 export class SmallCardComponent {
+  @Input()
+  photoCover: string = '';
 
   @Input()
-  photoCover: string = "";
+  cardTitle: string = '';
 
   @Input()
-  cardTitle: string = "";
-
-  @Input()
-  id: string = "0";
+  id: string = '0';
 }

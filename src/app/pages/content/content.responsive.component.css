@@ -1,0 +1,15 @@
+@media screen and (max-width: 992px) {
+    .content_cover > img {
+        width: 400px;
+        min-width: 400px;
+        height: 300px;
+    }
+
+    .content_title {
+        margin: 15px;
+    }
+
+    .content_description > button {
+        font-size: 20px;
+    }
+}

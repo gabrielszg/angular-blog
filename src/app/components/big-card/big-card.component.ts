@@ -6,19 +6,21 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './big-card.component.html',
-  styleUrl: './big-card.component.css'
+  styleUrls: [
+    './big-card.component.css',
+    './big-card.responsive.component.css',
+  ],
 })
 export class BigCardComponent {
+  @Input()
+  photoCover: string = '';
 
   @Input()
-  photoCover: string = "";
+  cardTitle: string = '';
 
   @Input()
-  cardTitle: string = "";
+  cardDescription: string = '';
 
   @Input()
-  cardDescription: string = "";
-
-  @Input()
-  id: string = "0";
+  id: string = '0';
 }
