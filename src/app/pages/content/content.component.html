@@ -9,7 +9,10 @@
     <hr>
   </div>
   <div class="content_description">
-    <a [routerLink]="['']"> << Voltar</a>
     <p>{{contentDescription}}</p>
+    <button [routerLink]="['']">
+      <fa-icon [icon]="faArrowLeft"></fa-icon>
+      Voltar
+    </button>
   </div>
 </div>

@@ -23,3 +23,12 @@
   margin-top: 20px;
   color: rgb(198, 197, 197);
 }
+
+.content_description > button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #808080;
+}

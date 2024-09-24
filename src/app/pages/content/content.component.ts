@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { dataFake } from '../../data/dataFake';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faArrowLeft, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-content',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, FontAwesomeModule],
   templateUrl: './content.component.html',
   styleUrl: './content.component.css',
 })
@@ -14,6 +16,8 @@ export class ContentComponent implements OnInit {
   contentTitle: string = '';
   contentDescription: string = '';
   private id: string | null = '0';
+
+  faArrowLeft: IconDefinition = faArrowLeft;
 
   constructor(private route: ActivatedRoute) {}
 
